@@ -1,0 +1,57 @@
+* {
+  border: solid 1px red;
+}
+
+body {
+  max-width: 1440px;
+  margin-inline: auto;
+  text-align: center;
+  padding: 40px;
+}
+
+.score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-size: 2.5rem;
+  }
+}
+
+.hands {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+
+  .computer-hand, .player-hand {
+    width: 300px;
+    img {
+      width: 100%;
+    }
+  }
+
+  .computer-hand {
+    transform: rotate(90deg);
+  }
+
+  .player-hand {
+    transform: rotate(-90deg) scaleX(-1) ;
+  }
+
+  .paper, .scissors {
+    display: none;
+  }
+}
+
+.choices {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-inline: auto;
+
+  button {
+    padding: 10px 25px;
+    border-radius: 10px;
+  }
+}
