@@ -19,7 +19,7 @@ choices.forEach(choice => {
     setTimeout(() => {
       revertToDefaultHand()
       
-    }, 3000);
+    }, 1000);
     
     // GET PLAYERS CHOICE
     playersChoice = choice.value
@@ -33,7 +33,7 @@ choices.forEach(choice => {
       showHands()
       updateScoreText()
       updateMsgText()
-    }, 3000);
+    }, 500);
 
   })
 })
