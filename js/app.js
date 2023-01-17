@@ -10,12 +10,16 @@ let playersScore = 0
 let computerScore = 0
 let msg = ''
 
-
+const rockHands = document.querySelectorAll('.rock')
 
 // display hands 
 
 choices.forEach(choice => {
   choice.addEventListener('click', () => {
+    setTimeout(() => {
+      revertToDefaultHand()
+      
+    }, 3000);
     
     // GET PLAYERS CHOICE
     playersChoice = choice.value
@@ -29,13 +33,33 @@ choices.forEach(choice => {
       showHands()
       updateScoreText()
       updateMsgText()
-    }, 1000);
+    }, 3000);
 
   })
 })
 
 function updateMsgText(){
   msgText.innerText = msg
+}
+
+function revertToDefaultHand(){
+  // set the players hand back to rock
+  playerHands.forEach(hand => {
+    if (!hand.classList.contains('rock')){
+      hand.style.display = 'none'
+    } else {
+      hand.style.display = 'flex'
+    }
+  })
+
+  // set the computers hand back to rock
+  computerHands.forEach(hand => {
+    if (!hand.classList.contains('rock')){
+      hand.style.display = 'none'
+    } else {
+      hand.style.display = 'flex'
+    }
+  })
 }
 
 
