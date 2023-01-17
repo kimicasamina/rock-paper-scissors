@@ -3,6 +3,7 @@ const playerHands = document.querySelectorAll('.player-hand .hand')
 const computerHands = document.querySelectorAll('.computer-hand .hand')
 const playerScoreText = document.querySelector('.player-score')
 const computerScoreText = document.querySelector('.computer-score')
+const msgText = document.querySelector('.message')
 let playersChoice;
 let computerChoice
 let playersScore = 0
@@ -27,10 +28,15 @@ choices.forEach(choice => {
       checkWinner(computerChoice, playersChoice)
       showHands()
       updateScoreText()
+      updateMsgText()
     }, 1000);
 
   })
 })
+
+function updateMsgText(){
+  msgText.innerText = msg
+}
 
 
 function updateScoreText(){
