@@ -1,6 +1,8 @@
 const choices = document.querySelectorAll('.choice')
 const playerHands = document.querySelectorAll('.player-hand .hand')
 const computerHands = document.querySelectorAll('.computer-hand .hand')
+const playerScoreText = document.querySelector('.player-score')
+const computerScoreText = document.querySelector('.computer-score')
 let playersChoice;
 let computerChoice
 let playersScore = 0
@@ -24,11 +26,17 @@ choices.forEach(choice => {
     setTimeout(() => {
       checkWinner(computerChoice, playersChoice)
       showHands()
+      updateScoreText()
     }, 1000);
 
   })
 })
 
+
+function updateScoreText(){
+  playerScoreText.innerText = playersScore
+  computerScoreText.innerText = computerScore
+}
 
 function showHands(){
   // SHOW PLAYER HANDS
