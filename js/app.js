@@ -4,7 +4,8 @@ const computerHands = document.querySelectorAll('.computer-hand .hand')
 let playersChoice;
 let computerChoice
 let playersScore = 0
-let player
+let computerScore = 0
+let msg = ''
 
 
 
@@ -89,37 +90,52 @@ function checkWinner(computerChoice, playersChoice){
   if (playersChoice == 'rock'){
     switch (computerChoice) {
       case 'rock':
-        console.log("its a tie")
+        msg = `It's a tie!`
+        console.log(msg)
         break;
       case 'paper':
-        console.log("computer wins")
+        msg = `Computer wins!`
+        console.log(msg)
+        computerScore++
         break;
       case 'scissors':
-        console.log("player wins")
+        msg = `Player wins!`
+        console.log(msg)
+        playersScore++
         break;
     }
   } else if (playersChoice == 'paper'){
     switch (computerChoice) {
       case 'rock':
-        console.log("player wins")
+        msg = `Player wins!`
+        console.log(msg)
+        playersScore++
         break;
       case 'paper':
-        console.log("its a tie")
+        msg = `It's a tie!`
+        console.log(msg)
         break;
       case 'scissors':
-        console.log("computer wins")
+        msg = `Computer wins!`
+        console.log(msg)
+        computerScore++
         break;
     }
   } else if (playersChoice == 'scissors'){
     switch (computerChoice) {
       case 'rock':
-        console.log("computer wins")
+        msg = `Computer wins!`
+        console.log(msg)
+        computerScore++
         break;
       case 'paper':
-        console.log("players wins")
+        msg = `Player wins!`
+        console.log(msg)
+        playersScore++
         break;
       case 'scissors':
-        console.log("its a tie")
+        msg = `It's a tie!`
+        console.log(msg)
         break;
     }
   }
